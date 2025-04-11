@@ -1,0 +1,9 @@
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/ResidentialManagement.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/install.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/ResidentialManagement_autogen_timestamp_deps.dir
+D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/ResidentialManagement_autogen.dir
