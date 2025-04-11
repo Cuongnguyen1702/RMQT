@@ -14,6 +14,7 @@ protected:
     std::string MaritalStatus;
     std::string Relationship;
     std::string Religion;
+    std::string ResidenceType;
 
 public:
     Person();
@@ -30,6 +31,7 @@ public:
     virtual std::string getMaritalStatus();
     virtual std::string getRelationship();
     virtual std::string getReligion();
+    virtual std::string getResidenceType();
 
     virtual void setID(const std::string& id);
     virtual void setName(const std::string& name);
@@ -39,6 +41,7 @@ public:
     virtual void setMaritalStatus(const std::string& maritalstatus);
     virtual void setRelationship(const std::string& relationship);
     virtual void setReligion(const std::string& religion);
+    virtual void setResidenceType(const std::string& restype);
 };
 
 #endif // PERSON_H

@@ -37,6 +37,9 @@ std::string Person::getRelationship(){
 std::string Person::getReligion(){
     return Religion;
 }
+std::string Person::getResidenceType(){
+    return ResidenceType;
+}
 //Set
 void Person::setID(const std::string& id){
     ID = id;
@@ -68,4 +71,7 @@ void Person::setRelationship(const std::string& relationship){
 
 void Person::setReligion(const std::string& religion){
     Religion = religion;
+}
+void Person::setResidenceType(const std::string& restype){
+    ResidenceType = restype;
 }
