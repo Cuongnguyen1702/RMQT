@@ -588,8 +588,11 @@ ResidentialManagement_autogen/timestamp: \
 	D:/TH_OOP/CuoiKi/ResidentialManagement/mainwindow.h \
 	D:/TH_OOP/CuoiKi/ResidentialManagement/person.cpp \
 	D:/TH_OOP/CuoiKi/ResidentialManagement/person.h \
+	D:/TH_OOP/CuoiKi/ResidentialManagement/personwindow.cpp \
+	D:/TH_OOP/CuoiKi/ResidentialManagement/personwindow.h \
 	D:/TH_OOP/CuoiKi/ResidentialManagement/town.cpp \
 	D:/TH_OOP/CuoiKi/ResidentialManagement/town.h \
 	D:/TH_OOP/CuoiKi/ResidentialManagement/familywindow.ui \
 	D:/TH_OOP/CuoiKi/ResidentialManagement/mainwindow.ui \
+	D:/TH_OOP/CuoiKi/ResidentialManagement/personwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

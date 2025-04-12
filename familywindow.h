@@ -15,6 +15,9 @@ public:
     explicit FamilyWindow(QWidget *parent = nullptr);
     ~FamilyWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::FamilyWindow *ui;
 };
