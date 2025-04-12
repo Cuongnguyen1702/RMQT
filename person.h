@@ -17,7 +17,8 @@ protected:
     std::string ResidenceType;
 
 public:
-    Person();
+    Person(std::string id, std::string name, std::string address, QDate birthdate, std::string livestatus, std::string maritalstatus,
+           std::string relationship, std::string religion, std::string restype);
     virtual ~Person();
     virtual void addPerson();
     virtual void deletePerson();

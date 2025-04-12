@@ -1,6 +1,18 @@
 #include "person.h"
-
-Person::Person() {}
+#include <QDate>
+//Constructor
+Person::Person(std::string id, std::string name, std::string address, QDate birthdate, std::string livestatus, std::string maritalstatus,
+                std::string relationship, std::string religion, std::string restype) {
+    ID = id;
+    Name = name;
+    Address = address;
+    Birthdate = birthdate;
+    LiveStatus = livestatus;
+    MaritalStatus = maritalstatus;
+    Relationship = relationship;
+    Religion = religion;
+    ResidenceType = restype;
+}
 Person::~Person(){}
 void Person::addPerson(){}
 void Person::deletePerson(){}
