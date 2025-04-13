@@ -34,7 +34,7 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_9;
-    QTextEdit *textEdit;
+    QTextEdit *IDtextEdit;
     QTextEdit *textEdit_2;
     QTextEdit *textEdit_3;
     QTextEdit *textEdit_4;
@@ -81,9 +81,9 @@ public:
         label_9 = new QLabel(PersonWindow);
         label_9->setObjectName("label_9");
         label_9->setGeometry(QRect(20, 250, 81, 20));
-        textEdit = new QTextEdit(PersonWindow);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(120, 10, 231, 21));
+        IDtextEdit = new QTextEdit(PersonWindow);
+        IDtextEdit->setObjectName("IDtextEdit");
+        IDtextEdit->setGeometry(QRect(120, 10, 231, 21));
         textEdit_2 = new QTextEdit(PersonWindow);
         textEdit_2->setObjectName("textEdit_2");
         textEdit_2->setGeometry(QRect(120, 40, 231, 21));

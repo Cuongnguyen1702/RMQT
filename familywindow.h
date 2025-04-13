@@ -16,7 +16,11 @@ public:
     ~FamilyWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_AddFamilyMemberButton_clicked();
+
+    void on_AddFamilyButton_clicked();
+
+    void on_IDOwnerEdit_textChanged();
 
 private:
     Ui::FamilyWindow *ui;
