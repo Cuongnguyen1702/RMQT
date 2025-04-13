@@ -1,32 +1,33 @@
 #include "person.h"
 #include <QDate>
 //Constructor
-Person::Person(std::string id, std::string name, std::string address, QDate birthdate, std::string livestatus, std::string maritalstatus,
-                std::string relationship, std::string religion, std::string restype) {
-    ID = id;
-    Name = name;
-    Address = address;
-    Birthdate = birthdate;
-    LiveStatus = livestatus;
-    MaritalStatus = maritalstatus;
-    Relationship = relationship;
-    Religion = religion;
-    ResidenceType = restype;
-}
+/*Person::Person(QString id, QString name, QString address, QDate* birthdate, QString livestatus, QString maritalstatus,
+                QString relationship, QString religion, QString restype) {
+    ID = "";
+    Name = "";
+    Address = "";
+    Birthdate = birthdate->currentDate();
+    LiveStatus = "";
+    MaritalStatus = "";
+    Relationship = "";
+    Religion = "";
+    ResidenceType = "";
+}*/
+Person::Person(){}
 Person::~Person(){}
 void Person::addPerson(){}
 void Person::deletePerson(){}
 void Person::editPerson(){}
 //Get
-std::string Person::getID(){
+QString Person::getID(){
     return ID;
 }
 
-std::string Person::getName(){
+QString Person::getName(){
     return Name;
 }
 
-std::string Person::getAddress(){
+QString Person::getAddress(){
     return Address;
 }
 
@@ -34,34 +35,34 @@ QDate Person::getBirthdate(){
     return Birthdate;
 }
 
-std::string Person::getLiveStatus(){
+QString Person::getLiveStatus(){
     return LiveStatus;
 }
 
-std::string Person::getMaritalStatus(){
+QString Person::getMaritalStatus(){
     return MaritalStatus;
 }
 
-std::string Person::getRelationship(){
+QString Person::getRelationship(){
     return Relationship;
 }
 
-std::string Person::getReligion(){
+QString Person::getReligion(){
     return Religion;
 }
-std::string Person::getResidenceType(){
+QString Person::getResidenceType(){
     return ResidenceType;
 }
 //Set
-void Person::setID(const std::string& id){
+void Person::setID(const QString& id){
     ID = id;
 }
 
-void Person::setName(const std::string& name){
+void Person::setName(const QString& name){
     Name = name;
 }
 
-void Person::setAddress(const std::string& address){
+void Person::setAddress(const QString& address){
     Address = address;
 }
 
@@ -69,21 +70,21 @@ void Person::setBirthdate(const QDate& birthdate){
     Birthdate = birthdate;
 }
 
-void Person::setLiveStatus(const std::string& livestatus){
+void Person::setLiveStatus(const QString& livestatus){
     LiveStatus = livestatus;
 }
 
-void Person::setMaritalStatus(const std::string& maritalstatus){
+void Person::setMaritalStatus(const QString& maritalstatus){
     MaritalStatus = maritalstatus;
 }
 
-void Person::setRelationship(const std::string& relationship){
+void Person::setRelationship(const QString& relationship){
     Relationship = relationship;
 }
 
-void Person::setReligion(const std::string& religion){
+void Person::setReligion(const QString& religion){
     Religion = religion;
 }
-void Person::setResidenceType(const std::string& restype){
+void Person::setResidenceType(const QString& restype){
     ResidenceType = restype;
 }

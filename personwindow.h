@@ -15,6 +15,9 @@ public:
     explicit PersonWindow(QWidget *parent = nullptr);
     ~PersonWindow();
 
+private slots:
+    void on_textEdit_textChanged();
+
 private:
     Ui::PersonWindow *ui;
 };

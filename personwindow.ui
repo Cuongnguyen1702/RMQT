@@ -146,7 +146,7 @@
     <string>Loại cư trú</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="IDtextEdit">
    <property name="geometry">
     <rect>
      <x>120</x>

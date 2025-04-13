@@ -6,43 +6,44 @@
 class Person
 {
 protected:
-    std::string ID;
-    std::string Name;
-    std::string Address;
+    QString ID;
+    QString Name;
+    QString Address;
     QDate Birthdate;
-    std::string LiveStatus;
-    std::string MaritalStatus;
-    std::string Relationship;
-    std::string Religion;
-    std::string ResidenceType;
+    QString LiveStatus;
+    QString MaritalStatus;
+    QString Relationship;
+    QString Religion;
+    QString ResidenceType;
 
 public:
-    Person(std::string id, std::string name, std::string address, QDate birthdate, std::string livestatus, std::string maritalstatus,
-           std::string relationship, std::string religion, std::string restype);
+    /*Person(QString id, QString name, QString address, QDate* birthdate, QString livestatus, QString maritalstatus,
+           QString relationship, QString religion, QString restype);*/
+    Person();
     virtual ~Person();
     virtual void addPerson();
     virtual void deletePerson();
     virtual void editPerson();
 
-    virtual std::string getID();
-    virtual std::string getName();
-    virtual std::string getAddress();
+    virtual QString getID();
+    virtual QString getName();
+    virtual QString getAddress();
     virtual QDate getBirthdate();
-    virtual std::string getLiveStatus();
-    virtual std::string getMaritalStatus();
-    virtual std::string getRelationship();
-    virtual std::string getReligion();
-    virtual std::string getResidenceType();
+    virtual QString getLiveStatus();
+    virtual QString getMaritalStatus();
+    virtual QString getRelationship();
+    virtual QString getReligion();
+    virtual QString getResidenceType();
 
-    virtual void setID(const std::string& id);
-    virtual void setName(const std::string& name);
-    virtual void setAddress(const std::string& address);
+    virtual void setID(const QString& id);
+    virtual void setName(const QString& name);
+    virtual void setAddress(const QString& address);
     virtual void setBirthdate(const QDate& birthdate);
-    virtual void setLiveStatus(const std::string& livestatus);
-    virtual void setMaritalStatus(const std::string& maritalstatus);
-    virtual void setRelationship(const std::string& relationship);
-    virtual void setReligion(const std::string& religion);
-    virtual void setResidenceType(const std::string& restype);
+    virtual void setLiveStatus(const QString& livestatus);
+    virtual void setMaritalStatus(const QString& maritalstatus);
+    virtual void setRelationship(const QString& relationship);
+    virtual void setReligion(const QString& religion);
+    virtual void setResidenceType(const QString& restype);
 };
 
 #endif // PERSON_H
