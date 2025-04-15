@@ -1,20 +1,17 @@
 #ifndef TOWN_H
 #define TOWN_H
-#include <string>
+#include <QVector>
+#include "family.h"
 
 class Town
 {
 protected:
-    std::string nameTown;
-    int familyNum;
+    QVector<Family*> families;
+    int familyCount;
 public:
     Town();
     ~Town();
-    virtual void showInfo();
-    virtual void addFamily();
-    virtual std::string getName() const;
-    virtual void setName(const std::string& name);
-    virtual int getFamilyNum() const;
+    virtual int getFamilyCount() const;
 };
 
 #endif // TOWN_H
