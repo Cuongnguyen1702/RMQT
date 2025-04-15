@@ -105,6 +105,14 @@ build CMakeFiles/ResidentialManagement.dir/personwindow.cpp.obj: CXX_COMPILER__R
   OBJECT_DIR = CMakeFiles\ResidentialManagement.dir
   OBJECT_FILE_DIR = CMakeFiles\ResidentialManagement.dir
 
+build CMakeFiles/ResidentialManagement.dir/family.cpp.obj: CXX_COMPILER__ResidentialManagement_unscanned_Debug D$:/TH_OOP/CuoiKi/ResidentialManagement/family.cpp || cmake_object_order_depends_target_ResidentialManagement
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ResidentialManagement.dir\family.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ResidentialManagement_autogen/include -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ResidentialManagement.dir
+  OBJECT_FILE_DIR = CMakeFiles\ResidentialManagement.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ResidentialManagement
@@ -113,7 +121,7 @@ build CMakeFiles/ResidentialManagement.dir/personwindow.cpp.obj: CXX_COMPILER__R
 #############################################
 # Link the executable ResidentialManagement.exe
 
-build ResidentialManagement.exe: CXX_EXECUTABLE_LINKER__ResidentialManagement_Debug CMakeFiles/ResidentialManagement.dir/ResidentialManagement_autogen/mocs_compilation.cpp.obj CMakeFiles/ResidentialManagement.dir/main.cpp.obj CMakeFiles/ResidentialManagement.dir/mainwindow.cpp.obj CMakeFiles/ResidentialManagement.dir/town.cpp.obj CMakeFiles/ResidentialManagement.dir/familywindow.cpp.obj CMakeFiles/ResidentialManagement.dir/person.cpp.obj CMakeFiles/ResidentialManagement.dir/personwindow.cpp.obj | C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || ResidentialManagement_autogen ResidentialManagement_autogen_timestamp_deps
+build ResidentialManagement.exe: CXX_EXECUTABLE_LINKER__ResidentialManagement_Debug CMakeFiles/ResidentialManagement.dir/ResidentialManagement_autogen/mocs_compilation.cpp.obj CMakeFiles/ResidentialManagement.dir/main.cpp.obj CMakeFiles/ResidentialManagement.dir/mainwindow.cpp.obj CMakeFiles/ResidentialManagement.dir/town.cpp.obj CMakeFiles/ResidentialManagement.dir/familywindow.cpp.obj CMakeFiles/ResidentialManagement.dir/person.cpp.obj CMakeFiles/ResidentialManagement.dir/personwindow.cpp.obj CMakeFiles/ResidentialManagement.dir/family.cpp.obj | C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || ResidentialManagement_autogen ResidentialManagement_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

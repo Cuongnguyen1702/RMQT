@@ -53,6 +53,9 @@ QString Person::getReligion(){
 QString Person::getResidenceType(){
     return ResidenceType;
 }
+bool Person::getIsHeadOfFamily(){
+    return isHeadOfFamily;
+}
 //Set
 void Person::setID(const QString& id){
     ID = id;
@@ -87,4 +90,7 @@ void Person::setReligion(const QString& religion){
 }
 void Person::setResidenceType(const QString& restype){
     ResidenceType = restype;
+}
+void Person::setIsHeadOfFamily(bool& head){
+    isHeadOfFamily = head;
 }

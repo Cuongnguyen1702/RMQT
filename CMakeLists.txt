@@ -28,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         familywindow.h familywindow.cpp familywindow.ui
         person.h person.cpp
         personwindow.h personwindow.cpp personwindow.ui
+        family.h family.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ResidentialManagement APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

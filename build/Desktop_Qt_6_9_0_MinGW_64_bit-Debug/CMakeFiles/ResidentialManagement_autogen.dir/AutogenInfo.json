@@ -332,6 +332,12 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/TH_OOP/CuoiKi/ResidentialManagement/family.h",
+			"MU",
+			"EWIEGA46WW/moc_family.cpp",
+			null
+		],
+		[
 			"D:/TH_OOP/CuoiKi/ResidentialManagement/familywindow.h",
 			"MU",
 			"EWIEGA46WW/moc_familywindow.cpp",
@@ -433,6 +439,7 @@
 	"SETTINGS_FILE" : "D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/ResidentialManagement_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/family.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/familywindow.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/main.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/mainwindow.cpp", "MU", null ],

@@ -1,6 +1,5 @@
 #ifndef PERSON_H
 #define PERSON_H
-#include <string>
 #include <QDate>
 
 class Person
@@ -15,6 +14,7 @@ protected:
     QString Relationship;
     QString Religion;
     QString ResidenceType;
+    bool isHeadOfFamily;
 
 public:
     /*Person(QString id, QString name, QString address, QDate* birthdate, QString livestatus, QString maritalstatus,
@@ -34,6 +34,7 @@ public:
     virtual QString getRelationship();
     virtual QString getReligion();
     virtual QString getResidenceType();
+    bool getIsHeadOfFamily();
 
     virtual void setID(const QString& id);
     virtual void setName(const QString& name);
@@ -44,6 +45,7 @@ public:
     virtual void setRelationship(const QString& relationship);
     virtual void setReligion(const QString& religion);
     virtual void setResidenceType(const QString& restype);
+    void setIsHeadOfFamily(bool& head);
 };
 
 #endif // PERSON_H

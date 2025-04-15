@@ -11,10 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,8 +25,9 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton;
-    QMenuBar *menubar;
+    QPushButton *AddFamily;
+    QLabel *FamilyListText;
+    QTableView *FamilyTableView;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -34,23 +37,32 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(280, 380, 221, 81));
-        pushButton->setAutoDefault(false);
-        pushButton->setFlat(false);
+        AddFamily = new QPushButton(centralwidget);
+        AddFamily->setObjectName("AddFamily");
+        AddFamily->setGeometry(QRect(290, 480, 221, 81));
+        AddFamily->setAutoDefault(false);
+        AddFamily->setFlat(false);
+        FamilyListText = new QLabel(centralwidget);
+        FamilyListText->setObjectName("FamilyListText");
+        FamilyListText->setGeometry(QRect(240, 10, 400, 20));
+        FamilyListText->setMinimumSize(QSize(0, 0));
+        FamilyListText->setTextFormat(Qt::TextFormat::AutoText);
+        FamilyListText->setScaledContents(true);
+        FamilyListText->setAlignment(Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter);
+        FamilyListText->setWordWrap(false);
+        FamilyListText->setMargin(1);
+        FamilyTableView = new QTableView(centralwidget);
+        FamilyTableView->setObjectName("FamilyTableView");
+        FamilyTableView->setGeometry(QRect(35, 70, 731, 351));
+        FamilyTableView->setGridStyle(Qt::PenStyle::DashLine);
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 25));
-        MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
 
-        pushButton->setDefault(false);
+        AddFamily->setDefault(false);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -59,7 +71,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Qu\341\272\243n L\303\275 D\303\242n C\306\260 Khu Ph\341\273\221", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Th\303\252m h\341\273\231 gia \304\221\303\254nh", nullptr));
+        AddFamily->setText(QCoreApplication::translate("MainWindow", "Th\303\252m h\341\273\231 gia \304\221\303\254nh", nullptr));
+        FamilyListText->setText(QCoreApplication::translate("MainWindow", "DANH S\303\201CH H\341\273\230 GIA \304\220\303\214NH TRONG KHU PH\341\273\220", nullptr));
     } // retranslateUi
 
 };
