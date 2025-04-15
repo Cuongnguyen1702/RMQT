@@ -4,8 +4,9 @@
 
 class Person
 {
-protected:
+public:
     QString ID;
+    QString IDofOwner;
     QString Name;
     QString Address;
     QDate Birthdate;
@@ -26,6 +27,7 @@ public:
     virtual void editPerson();
 
     virtual QString getID();
+    virtual QString getIDofOwner();
     virtual QString getName();
     virtual QString getAddress();
     virtual QDate getBirthdate();
@@ -37,6 +39,7 @@ public:
     bool getIsHeadOfFamily();
 
     virtual void setID(const QString& id);
+    virtual void setIDofOwner(const QString& ido);
     virtual void setName(const QString& name);
     virtual void setAddress(const QString& address);
     virtual void setBirthdate(const QDate& birthdate);
@@ -45,7 +48,7 @@ public:
     virtual void setRelationship(const QString& relationship);
     virtual void setReligion(const QString& religion);
     virtual void setResidenceType(const QString& restype);
-    void setIsHeadOfFamily(bool& head);
+    void setIsHeadOfFamily(const bool& head);
 };
 
 #endif // PERSON_H

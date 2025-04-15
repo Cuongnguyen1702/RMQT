@@ -13,22 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>500</y>
-     <width>341</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -156,7 +140,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="NametextEdit">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -166,7 +150,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_3">
+  <widget class="QTextEdit" name="AddresstextEdit">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -176,7 +160,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_4">
+  <widget class="QTextEdit" name="AlivetextEdit">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -186,7 +170,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_5">
+  <widget class="QTextEdit" name="MaritaltextEdit">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -196,7 +180,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_6">
+  <widget class="QTextEdit" name="RelationshiptextEdit">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -206,7 +190,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_7">
+  <widget class="QTextEdit" name="ReligiontextEdit">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -216,7 +200,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dateEdit">
+  <widget class="QDateEdit" name="BirthdateEdit">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -226,7 +210,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="ResidencecomboBox">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -246,40 +230,59 @@
     </property>
    </item>
   </widget>
+  <widget class="QCheckBox" name="OwnercheckBox">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>290</y>
+     <width>93</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>290</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Chủ hộ</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SaveButton">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>450</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lưu</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CancelButton">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>450</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Huỷ</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>PersonWindow</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>PersonWindow</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

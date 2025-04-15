@@ -10,13 +10,13 @@
 #define UI_PERSONWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
@@ -24,7 +24,6 @@ QT_BEGIN_NAMESPACE
 class Ui_PersonWindow
 {
 public:
-    QDialogButtonBox *buttonBox;
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
@@ -35,25 +34,24 @@ public:
     QLabel *label_8;
     QLabel *label_9;
     QTextEdit *IDtextEdit;
-    QTextEdit *textEdit_2;
-    QTextEdit *textEdit_3;
-    QTextEdit *textEdit_4;
-    QTextEdit *textEdit_5;
-    QTextEdit *textEdit_6;
-    QTextEdit *textEdit_7;
-    QDateEdit *dateEdit;
-    QComboBox *comboBox;
+    QTextEdit *NametextEdit;
+    QTextEdit *AddresstextEdit;
+    QTextEdit *AlivetextEdit;
+    QTextEdit *MaritaltextEdit;
+    QTextEdit *RelationshiptextEdit;
+    QTextEdit *ReligiontextEdit;
+    QDateEdit *BirthdateEdit;
+    QComboBox *ResidencecomboBox;
+    QCheckBox *OwnercheckBox;
+    QLabel *label_10;
+    QPushButton *SaveButton;
+    QPushButton *CancelButton;
 
     void setupUi(QDialog *PersonWindow)
     {
         if (PersonWindow->objectName().isEmpty())
             PersonWindow->setObjectName("PersonWindow");
         PersonWindow->resize(661, 552);
-        buttonBox = new QDialogButtonBox(PersonWindow);
-        buttonBox->setObjectName("buttonBox");
-        buttonBox->setGeometry(QRect(250, 500, 341, 21));
-        buttonBox->setOrientation(Qt::Orientation::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
         label = new QLabel(PersonWindow);
         label->setObjectName("label");
         label->setGeometry(QRect(20, 10, 63, 20));
@@ -84,36 +82,46 @@ public:
         IDtextEdit = new QTextEdit(PersonWindow);
         IDtextEdit->setObjectName("IDtextEdit");
         IDtextEdit->setGeometry(QRect(120, 10, 231, 21));
-        textEdit_2 = new QTextEdit(PersonWindow);
-        textEdit_2->setObjectName("textEdit_2");
-        textEdit_2->setGeometry(QRect(120, 40, 231, 21));
-        textEdit_3 = new QTextEdit(PersonWindow);
-        textEdit_3->setObjectName("textEdit_3");
-        textEdit_3->setGeometry(QRect(120, 70, 231, 21));
-        textEdit_4 = new QTextEdit(PersonWindow);
-        textEdit_4->setObjectName("textEdit_4");
-        textEdit_4->setGeometry(QRect(120, 130, 231, 21));
-        textEdit_5 = new QTextEdit(PersonWindow);
-        textEdit_5->setObjectName("textEdit_5");
-        textEdit_5->setGeometry(QRect(120, 160, 231, 21));
-        textEdit_6 = new QTextEdit(PersonWindow);
-        textEdit_6->setObjectName("textEdit_6");
-        textEdit_6->setGeometry(QRect(160, 190, 231, 21));
-        textEdit_7 = new QTextEdit(PersonWindow);
-        textEdit_7->setObjectName("textEdit_7");
-        textEdit_7->setGeometry(QRect(100, 220, 231, 21));
-        dateEdit = new QDateEdit(PersonWindow);
-        dateEdit->setObjectName("dateEdit");
-        dateEdit->setGeometry(QRect(120, 100, 110, 29));
-        comboBox = new QComboBox(PersonWindow);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(110, 250, 111, 28));
+        NametextEdit = new QTextEdit(PersonWindow);
+        NametextEdit->setObjectName("NametextEdit");
+        NametextEdit->setGeometry(QRect(120, 40, 231, 21));
+        AddresstextEdit = new QTextEdit(PersonWindow);
+        AddresstextEdit->setObjectName("AddresstextEdit");
+        AddresstextEdit->setGeometry(QRect(120, 70, 231, 21));
+        AlivetextEdit = new QTextEdit(PersonWindow);
+        AlivetextEdit->setObjectName("AlivetextEdit");
+        AlivetextEdit->setGeometry(QRect(120, 130, 231, 21));
+        MaritaltextEdit = new QTextEdit(PersonWindow);
+        MaritaltextEdit->setObjectName("MaritaltextEdit");
+        MaritaltextEdit->setGeometry(QRect(120, 160, 231, 21));
+        RelationshiptextEdit = new QTextEdit(PersonWindow);
+        RelationshiptextEdit->setObjectName("RelationshiptextEdit");
+        RelationshiptextEdit->setGeometry(QRect(160, 190, 231, 21));
+        ReligiontextEdit = new QTextEdit(PersonWindow);
+        ReligiontextEdit->setObjectName("ReligiontextEdit");
+        ReligiontextEdit->setGeometry(QRect(100, 220, 231, 21));
+        BirthdateEdit = new QDateEdit(PersonWindow);
+        BirthdateEdit->setObjectName("BirthdateEdit");
+        BirthdateEdit->setGeometry(QRect(120, 100, 110, 29));
+        ResidencecomboBox = new QComboBox(PersonWindow);
+        ResidencecomboBox->addItem(QString());
+        ResidencecomboBox->addItem(QString());
+        ResidencecomboBox->setObjectName("ResidencecomboBox");
+        ResidencecomboBox->setGeometry(QRect(110, 250, 111, 28));
+        OwnercheckBox = new QCheckBox(PersonWindow);
+        OwnercheckBox->setObjectName("OwnercheckBox");
+        OwnercheckBox->setGeometry(QRect(110, 290, 93, 26));
+        label_10 = new QLabel(PersonWindow);
+        label_10->setObjectName("label_10");
+        label_10->setGeometry(QRect(20, 290, 63, 20));
+        SaveButton = new QPushButton(PersonWindow);
+        SaveButton->setObjectName("SaveButton");
+        SaveButton->setGeometry(QRect(180, 450, 83, 29));
+        CancelButton = new QPushButton(PersonWindow);
+        CancelButton->setObjectName("CancelButton");
+        CancelButton->setGeometry(QRect(370, 450, 83, 29));
 
         retranslateUi(PersonWindow);
-        QObject::connect(buttonBox, &QDialogButtonBox::accepted, PersonWindow, qOverload<>(&QDialog::accept));
-        QObject::connect(buttonBox, &QDialogButtonBox::rejected, PersonWindow, qOverload<>(&QDialog::reject));
 
         QMetaObject::connectSlotsByName(PersonWindow);
     } // setupUi
@@ -130,9 +138,13 @@ public:
         label_7->setText(QCoreApplication::translate("PersonWindow", "Quan h\341\273\207 v\341\273\233i ch\341\273\247 h\341\273\231", nullptr));
         label_8->setText(QCoreApplication::translate("PersonWindow", "T\303\264n gi\303\241o", nullptr));
         label_9->setText(QCoreApplication::translate("PersonWindow", "Lo\341\272\241i c\306\260 tr\303\272", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("PersonWindow", "Th\306\260\341\273\235ng tr\303\272", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("PersonWindow", "T\341\272\241m tr\303\272", nullptr));
+        ResidencecomboBox->setItemText(0, QCoreApplication::translate("PersonWindow", "Th\306\260\341\273\235ng tr\303\272", nullptr));
+        ResidencecomboBox->setItemText(1, QCoreApplication::translate("PersonWindow", "T\341\272\241m tr\303\272", nullptr));
 
+        OwnercheckBox->setText(QString());
+        label_10->setText(QCoreApplication::translate("PersonWindow", "Ch\341\273\247 h\341\273\231", nullptr));
+        SaveButton->setText(QCoreApplication::translate("PersonWindow", "L\306\260u", nullptr));
+        CancelButton->setText(QCoreApplication::translate("PersonWindow", "Hu\341\273\267", nullptr));
     } // retranslateUi
 
 };

@@ -22,5 +22,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void FamilyList();
 };
 #endif // MAINWINDOW_H

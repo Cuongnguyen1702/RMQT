@@ -7,6 +7,7 @@ class Town
 {
 protected:
     QVector<Family*> families;
+    QVector<Person> owner;
     int familyCount;
 public:
     Town();

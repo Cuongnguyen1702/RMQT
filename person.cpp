@@ -23,6 +23,11 @@ QString Person::getID(){
     return ID;
 }
 
+QString Person::getIDofOwner(){
+    return IDofOwner;
+}
+
+
 QString Person::getName(){
     return Name;
 }
@@ -61,6 +66,10 @@ void Person::setID(const QString& id){
     ID = id;
 }
 
+void Person::setIDofOwner(const QString& ido){
+    IDofOwner = ido;
+}
+
 void Person::setName(const QString& name){
     Name = name;
 }
@@ -91,6 +100,6 @@ void Person::setReligion(const QString& religion){
 void Person::setResidenceType(const QString& restype){
     ResidenceType = restype;
 }
-void Person::setIsHeadOfFamily(bool& head){
+void Person::setIsHeadOfFamily(const bool& head){
     isHeadOfFamily = head;
 }

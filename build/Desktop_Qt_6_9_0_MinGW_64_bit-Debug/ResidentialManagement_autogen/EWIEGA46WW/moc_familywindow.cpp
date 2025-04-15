@@ -42,7 +42,9 @@ template <> constexpr inline auto FamilyWindow::qt_create_metaobjectdata<qt_meta
         "on_AddFamilyMemberButton_clicked",
         "",
         "on_AddFamilyButton_clicked",
-        "on_IDOwnerEdit_textChanged"
+        "onPersonAdded",
+        "Person*",
+        "person"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -50,8 +52,10 @@ template <> constexpr inline auto FamilyWindow::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_AddFamilyButton_clicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_IDOwnerEdit_textChanged'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onPersonAdded'
+        QtMocHelpers::SlotData<void(Person *)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 5, 6 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -77,11 +81,10 @@ void FamilyWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->on_AddFamilyMemberButton_clicked(); break;
         case 1: _t->on_AddFamilyButton_clicked(); break;
-        case 2: _t->on_IDOwnerEdit_textChanged(); break;
+        case 2: _t->onPersonAdded((*reinterpret_cast< std::add_pointer_t<Person*>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *FamilyWindow::metaObject() const

@@ -1,6 +1,6 @@
 #ifndef FAMILYWINDOW_H
 #define FAMILYWINDOW_H
-
+#include "family.h"
 #include <QDialog>
 
 namespace Ui {
@@ -20,10 +20,11 @@ private slots:
 
     void on_AddFamilyButton_clicked();
 
-    void on_IDOwnerEdit_textChanged();
+    void onPersonAdded(Person* person);
 
 private:
     Ui::FamilyWindow *ui;
+    Family family;
 };
 
 #endif // FAMILYWINDOW_H

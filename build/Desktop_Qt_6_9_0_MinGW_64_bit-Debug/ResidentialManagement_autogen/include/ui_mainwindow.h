@@ -16,7 +16,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +27,7 @@ public:
     QWidget *centralwidget;
     QPushButton *AddFamily;
     QLabel *FamilyListText;
-    QTableView *FamilyTableView;
+    QTableWidget *FamilyTableWidget;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -51,10 +51,9 @@ public:
         FamilyListText->setAlignment(Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter);
         FamilyListText->setWordWrap(false);
         FamilyListText->setMargin(1);
-        FamilyTableView = new QTableView(centralwidget);
-        FamilyTableView->setObjectName("FamilyTableView");
-        FamilyTableView->setGeometry(QRect(35, 70, 731, 351));
-        FamilyTableView->setGridStyle(Qt::PenStyle::DashLine);
+        FamilyTableWidget = new QTableWidget(centralwidget);
+        FamilyTableWidget->setObjectName("FamilyTableWidget");
+        FamilyTableWidget->setGeometry(QRect(15, 61, 771, 361));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
