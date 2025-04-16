@@ -12,8 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
@@ -27,12 +29,13 @@ public:
     QLabel *label_2;
     QTextEdit *IDOwnerEdit;
     QPushButton *AddFamilyButton;
+    QTableWidget *FamMemTableWidget;
 
     void setupUi(QDialog *FamilyWindow)
     {
         if (FamilyWindow->objectName().isEmpty())
             FamilyWindow->setObjectName("FamilyWindow");
-        FamilyWindow->resize(509, 420);
+        FamilyWindow->resize(505, 406);
         AddressEdit = new QTextEdit(FamilyWindow);
         AddressEdit->setObjectName("AddressEdit");
         AddressEdit->setGeometry(QRect(90, 80, 241, 31));
@@ -53,6 +56,9 @@ public:
         AddFamilyButton = new QPushButton(FamilyWindow);
         AddFamilyButton->setObjectName("AddFamilyButton");
         AddFamilyButton->setGeometry(QRect(20, 340, 221, 41));
+        FamMemTableWidget = new QTableWidget(FamilyWindow);
+        FamMemTableWidget->setObjectName("FamMemTableWidget");
+        FamMemTableWidget->setGeometry(QRect(10, 140, 481, 192));
 
         retranslateUi(FamilyWindow);
 

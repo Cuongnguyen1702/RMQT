@@ -25,9 +25,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         Town.h
         town.h town.cpp
-        familywindow.h familywindow.cpp familywindow.ui
+
         person.h person.cpp
-        personwindow.h personwindow.cpp personwindow.ui
+
         family.h family.cpp
     )
 # Define target properties for Android with Qt 6 as:

@@ -338,12 +338,6 @@
 			null
 		],
 		[
-			"D:/TH_OOP/CuoiKi/ResidentialManagement/familywindow.h",
-			"MU",
-			"EWIEGA46WW/moc_familywindow.cpp",
-			null
-		],
-		[
 			"D:/TH_OOP/CuoiKi/ResidentialManagement/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -353,12 +347,6 @@
 			"D:/TH_OOP/CuoiKi/ResidentialManagement/person.h",
 			"MU",
 			"EWIEGA46WW/moc_person.cpp",
-			null
-		],
-		[
-			"D:/TH_OOP/CuoiKi/ResidentialManagement/personwindow.h",
-			"MU",
-			"EWIEGA46WW/moc_personwindow.cpp",
 			null
 		],
 		[
@@ -440,11 +428,9 @@
 	"SOURCES" : 
 	[
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/family.cpp", "MU", null ],
-		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/familywindow.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/main.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/mainwindow.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/person.cpp", "MU", null ],
-		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/personwindow.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/town.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
