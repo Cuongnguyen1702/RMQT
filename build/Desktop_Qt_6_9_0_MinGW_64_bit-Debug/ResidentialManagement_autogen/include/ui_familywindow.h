@@ -11,67 +11,71 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_FamilyWindow
 {
 public:
-    QTextEdit *AddressEdit;
-    QLabel *label;
-    QPushButton *AddFamilyMemberButton;
-    QLabel *label_2;
-    QTextEdit *IDOwnerEdit;
+    QWidget *centralwidget;
+    QTableWidget *FamMemTableWidg;
     QPushButton *AddFamilyButton;
-    QTableWidget *FamMemTableWidget;
+    QPushButton *FamilyMemButton;
+    QLabel *IDLabel;
+    QPushButton *FindFamButton;
+    QLineEdit *IDtextEdit;
+    QStatusBar *statusbar;
 
-    void setupUi(QDialog *FamilyWindow)
+    void setupUi(QMainWindow *FamilyWindow)
     {
         if (FamilyWindow->objectName().isEmpty())
             FamilyWindow->setObjectName("FamilyWindow");
-        FamilyWindow->resize(505, 406);
-        AddressEdit = new QTextEdit(FamilyWindow);
-        AddressEdit->setObjectName("AddressEdit");
-        AddressEdit->setGeometry(QRect(90, 80, 241, 31));
-        label = new QLabel(FamilyWindow);
-        label->setObjectName("label");
-        label->setGeometry(QRect(30, 80, 63, 20));
-        label->setTextFormat(Qt::TextFormat::PlainText);
-        label->setTextInteractionFlags(Qt::TextInteractionFlag::NoTextInteraction);
-        AddFamilyMemberButton = new QPushButton(FamilyWindow);
-        AddFamilyMemberButton->setObjectName("AddFamilyMemberButton");
-        AddFamilyMemberButton->setGeometry(QRect(260, 340, 231, 41));
-        label_2 = new QLabel(FamilyWindow);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(20, 40, 71, 20));
-        IDOwnerEdit = new QTextEdit(FamilyWindow);
-        IDOwnerEdit->setObjectName("IDOwnerEdit");
-        IDOwnerEdit->setGeometry(QRect(90, 40, 241, 31));
-        AddFamilyButton = new QPushButton(FamilyWindow);
+        FamilyWindow->resize(800, 600);
+        centralwidget = new QWidget(FamilyWindow);
+        centralwidget->setObjectName("centralwidget");
+        FamMemTableWidg = new QTableWidget(centralwidget);
+        FamMemTableWidg->setObjectName("FamMemTableWidg");
+        FamMemTableWidg->setGeometry(QRect(15, 120, 771, 301));
+        AddFamilyButton = new QPushButton(centralwidget);
         AddFamilyButton->setObjectName("AddFamilyButton");
-        AddFamilyButton->setGeometry(QRect(20, 340, 221, 41));
-        FamMemTableWidget = new QTableWidget(FamilyWindow);
-        FamMemTableWidget->setObjectName("FamMemTableWidget");
-        FamMemTableWidget->setGeometry(QRect(10, 140, 481, 192));
+        AddFamilyButton->setGeometry(QRect(230, 450, 101, 51));
+        FamilyMemButton = new QPushButton(centralwidget);
+        FamilyMemButton->setObjectName("FamilyMemButton");
+        FamilyMemButton->setGeometry(QRect(400, 450, 181, 51));
+        IDLabel = new QLabel(centralwidget);
+        IDLabel->setObjectName("IDLabel");
+        IDLabel->setGeometry(QRect(10, 30, 91, 20));
+        FindFamButton = new QPushButton(centralwidget);
+        FindFamButton->setObjectName("FindFamButton");
+        FindFamButton->setGeometry(QRect(350, 20, 121, 29));
+        IDtextEdit = new QLineEdit(centralwidget);
+        IDtextEdit->setObjectName("IDtextEdit");
+        IDtextEdit->setGeometry(QRect(110, 30, 113, 21));
+        FamilyWindow->setCentralWidget(centralwidget);
+        statusbar = new QStatusBar(FamilyWindow);
+        statusbar->setObjectName("statusbar");
+        FamilyWindow->setStatusBar(statusbar);
 
         retranslateUi(FamilyWindow);
 
         QMetaObject::connectSlotsByName(FamilyWindow);
     } // setupUi
 
-    void retranslateUi(QDialog *FamilyWindow)
+    void retranslateUi(QMainWindow *FamilyWindow)
     {
-        FamilyWindow->setWindowTitle(QCoreApplication::translate("FamilyWindow", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("FamilyWindow", "\304\220\341\273\213a ch\341\273\211", nullptr));
-        AddFamilyMemberButton->setText(QCoreApplication::translate("FamilyWindow", "Th\303\252m ng\306\260\341\273\235i trong gia \304\221\303\254nh", nullptr));
-        label_2->setText(QCoreApplication::translate("FamilyWindow", "ID ch\341\273\247 h\341\273\231", nullptr));
-        AddFamilyButton->setText(QCoreApplication::translate("FamilyWindow", "Th\303\252m h\341\273\231 gia \304\221\303\254nh v\303\240o khu ph\341\273\221", nullptr));
+        FamilyWindow->setWindowTitle(QCoreApplication::translate("FamilyWindow", "MainWindow", nullptr));
+        AddFamilyButton->setText(QCoreApplication::translate("FamilyWindow", "\304\220\303\263ng", nullptr));
+        FamilyMemButton->setText(QCoreApplication::translate("FamilyWindow", "Th\303\252m th\303\240nh vi\303\252n gia \304\221\303\254nh", nullptr));
+        IDLabel->setText(QCoreApplication::translate("FamilyWindow", "CCCD ch\341\273\247 h\341\273\231", nullptr));
+        FindFamButton->setText(QCoreApplication::translate("FamilyWindow", "T\303\254m h\341\273\231 gia \304\221\303\254nh", nullptr));
     } // retranslateUi
 
 };

@@ -39,23 +39,28 @@ template <> constexpr inline auto FamilyWindow::qt_create_metaobjectdata<qt_meta
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "FamilyWindow",
-        "on_AddFamilyMemberButton_clicked",
+        "showContextMenu",
         "",
-        "on_AddFamilyButton_clicked",
-        "onPersonAdded",
-        "Person*",
-        "person"
+        "pos",
+        "deleteFromCSV",
+        "id",
+        "on_FamilyMemButton_clicked",
+        "on_AddFamilyButton_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'on_AddFamilyMemberButton_clicked'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_AddFamilyButton_clicked'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onPersonAdded'
-        QtMocHelpers::SlotData<void(Person *)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 5, 6 },
+        // Slot 'showContextMenu'
+        QtMocHelpers::SlotData<void(const QPoint &)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QPoint, 3 },
         }}),
+        // Slot 'deleteFromCSV'
+        QtMocHelpers::SlotData<void(const QString &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 5 },
+        }}),
+        // Slot 'on_FamilyMemButton_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_AddFamilyButton_clicked'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -65,7 +70,7 @@ template <> constexpr inline auto FamilyWindow::qt_create_metaobjectdata<qt_meta
             qt_methods, qt_properties, qt_enums);
 }
 Q_CONSTINIT const QMetaObject FamilyWindow::staticMetaObject = { {
-    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
     qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12FamilyWindowE_t>.stringdata,
     qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12FamilyWindowE_t>.data,
     qt_static_metacall,
@@ -79,9 +84,10 @@ void FamilyWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     auto *_t = static_cast<FamilyWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_AddFamilyMemberButton_clicked(); break;
-        case 1: _t->on_AddFamilyButton_clicked(); break;
-        case 2: _t->onPersonAdded((*reinterpret_cast< std::add_pointer_t<Person*>>(_a[1]))); break;
+        case 0: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 1: _t->deleteFromCSV((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 2: _t->on_FamilyMemButton_clicked(); break;
+        case 3: _t->on_AddFamilyButton_clicked(); break;
         default: ;
         }
     }
@@ -97,23 +103,23 @@ void *FamilyWindow::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12FamilyWindowE_t>.strings))
         return static_cast<void*>(this);
-    return QDialog::qt_metacast(_clname);
+    return QMainWindow::qt_metacast(_clname);
 }
 
 int FamilyWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QDialog::qt_metacall(_c, _id, _a);
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

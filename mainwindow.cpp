@@ -1,8 +1,11 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "familywindow.h"
-#include "town.h"
+#include <QMessageBox>
+#include <QMenu>
 #include <QStandardItemModel>
+#include <QStandardPaths>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,88 +14,147 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     FamilyList();
     ui->FamilyListText->setStyleSheet("font-weight: bold; font-size: 16px");
+    ui->FamilyTableWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(ui->FamilyTableWidget, &QTableWidget::customContextMenuRequested,
+            this, &MainWindow::showContextMenu);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::deleteFamilyByID(const QString &familyID)
+{
+    QString filePath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/FamiliesInTown.csv";
+    QFile file(filePath);
+    QStringList lines;
 
-void MainWindow::FamilyList(){
-    Town *townInfo = new Town();
-    //ui->FamilyTableWidget->setRowCount(townInfo->getFamilyCount());
-    ui->FamilyTableWidget->setRowCount(20);
-    ui->FamilyTableWidget->setColumnCount(3);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
-    QStringList hlabels;
-    hlabels << "CCCD chủ hộ" << "Họ và tên" << "Địa chỉ";
-    ui->FamilyTableWidget->setHorizontalHeaderLabels(hlabels);
+    QTextStream in(&file);
+    QString header = in.readLine();
+    lines.append(header); // Keep header
 
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList cols = line.split(";");
+        if (cols.size() >= 11 && cols[10] != familyID) {
+            lines.append(line); // Keep only those with different FamilyID
+        }
+    }
+    file.close();
 
+    if (file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+        QTextStream out(&file);
+        out.setEncoding(QStringConverter::Utf8);
+        out << "\xEF\xBB\xBF"; // UTF-8 BOM
+        for (const QString &line : lines)
+            out << line << "\n";
+        file.close();
+        qDebug() << "Deleted family with ID:" << familyID;
+    }
+}
+void MainWindow::showContextMenu(const QPoint &pos)
+{
+    QModelIndex index = ui->FamilyTableWidget->indexAt(pos);
+    if (!index.isValid()) return;
 
+    int row = index.row();
+    QString id = ui->FamilyTableWidget->item(row, 0)->text(); // CCCD of head
 
-    QStringList names = {
-        "Nguyễn Văn An", "Trần Thị Bình", "Lê Hoàng Cường", "Phạm Thị Dung",
-        "Hoàng Văn Đạt", "Vũ Thị Mai", "Đỗ Ngọc Minh", "Bùi Thị Hương",
-        "Đặng Văn Phúc", "Ngô Thị Lan", "Trương Văn Sơn", "Lý Thị Hà",
-        "Nguyễn Đình Tùng", "Phan Thị Thu", "Hồ Văn Nhật", "Chu Thị Ngọc",
-        "Mai Văn Hải", "Đinh Thị Linh", "Võ Văn Tuấn", "Lưu Thị Kim"
-    };
-
-    QStringList ids = {
-        "001", "002", "003", "004", "005", "006", "007", "008", "009", "010",
-        "011", "012", "013", "014", "015", "016", "017", "018", "019", "020"
-    };
-
-
-    QStringList addresses = {
-        "12/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "24/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "36/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "45/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "57/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "68/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "72/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "83/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "94/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "105/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "112/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "124/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "136/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "145/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "157/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "168/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "172/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "183/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "194/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM",
-        "205/15 Nguyễn Văn Linh, Tân Phong, Q7, TP.HCM"
-    };
-
-    // insert Data
-    for (int i = 0; i < ui->FamilyTableWidget->rowCount(); i++) {
-        ui->FamilyTableWidget->setItem(i, 0, new QTableWidgetItem(ids[i]));
-        ui->FamilyTableWidget->setItem(i, 1, new QTableWidgetItem(names[i]));
-        ui->FamilyTableWidget->setItem(i, 2, new QTableWidgetItem(addresses[i]));
+    // Open the CSV to find the corresponding FamilyID
+    QString familyID;
+    QString filePath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/FamiliesInTown.csv";
+    QFile file(filePath);
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+        in.readLine(); // Skip header
+        while (!in.atEnd()) {
+            QString line = in.readLine();
+            QStringList columns = line.split(";");
+            if (columns.size() >= 11 && columns[0] == id && columns[8].trimmed() == "1") {
+                familyID = columns[10];
+                break;
+            }
+        }
+        file.close();
     }
 
+    if (familyID.isEmpty()) {
+        QMessageBox::warning(this, "Lỗi", "Không tìm thấy CCCD chủ hộ để xoá");
+        return;
+    }
 
-    ui->FamilyTableWidget->setStyleSheet(
-        "QTableWidget {"
-        "   font-size: 12pt;"
-        "   selection-background-color: #3498db;"
-        "}"
-        "QHeaderView::section {"
-        "   background-color: #2980b9;"
-        "   color: white;"
-        "   padding: 5px;"
-        "   font-weight: bold;"
-        "}"
+    QMenu menu;
+    QAction *deleteAction = menu.addAction("Xoá gia đình này");
+    QAction *selectedAction = menu.exec(ui->FamilyTableWidget->viewport()->mapToGlobal(pos));
+
+    if (selectedAction == deleteAction) {
+        QMessageBox::StandardButton confirm = QMessageBox::question(this, "Xác nhận xoá",
+                                                                    "Bạn có muốn xoá gia đình này(bao gồm tất cả thành viên)?",
+                                                                    QMessageBox::Yes | QMessageBox::No);
+
+        if (confirm == QMessageBox::Yes) {
+            deleteFamilyByID(familyID);
+            FamilyList(); // Refresh table
+        }
+    }
+}
+void MainWindow::FamilyList(){
+    QTableWidget *table = ui->FamilyTableWidget;
+    table->setColumnCount(3);
+    table->setRowCount(0);
+
+    this->setWindowTitle("QUẢN LÝ HỘ DÂN TRONG KHU PHỐ");
+
+    QStringList hlabels;
+    hlabels << "CCCD chủ hộ" << "Họ và tên" << "Nơi ở hiện tại";
+    table->setHorizontalHeaderLabels(hlabels);
+
+    //Read CSV
+    QString filePath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/FamiliesInTown.csv";
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Unable to open CSV file!";
+        return;
+    }
+
+    QTextStream in(&file);
+    QString headerLine = in.readLine(); // Skip header
+
+    int row = 0;
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList columns = line.split(";");
+
+        if (columns.size() < 17)
+            continue; // Skip malformed rows
+
+        if(columns[8].trimmed() == "1"){
+            table->insertRow(row);
+            table->setItem(row, 0, new QTableWidgetItem(columns[8])); // ID of head
+            table->setItem(row, 1, new QTableWidgetItem(columns[1])); // Name
+            table->setItem(row, 2, new QTableWidgetItem(columns[2])); // Address
+
+            row++;
+        }
+
+    }
+
+    file.close();
+
+    // Styling
+    table->setStyleSheet(
+        "QTableWidget { font-size: 11pt; }"
+        "QHeaderView::section { background-color: #2980b9; color: white; padding: 8px; font-weight: bold; }"
+        "QTableWidget::item { padding: 5px; }"
         );
 
-    ui->FamilyTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
-    ui->FamilyTableWidget->resizeColumnsToContents();
-    ui->FamilyTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
+    table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    table->resizeColumnsToContents();
+    table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    table->setMaximumHeight(250);
+    table->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
 }
 

@@ -23,12 +23,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ResidentialManagement
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        Town.h
-        town.h town.cpp
-
         person.h person.cpp
 
-        family.h family.cpp
+
+        familywindow.h familywindow.cpp familywindow.ui
+        personwindow.h personwindow.cpp personwindow.ui
+        temporary.h temporary.cpp
+        permanent.h permanent.cpp
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ResidentialManagement APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

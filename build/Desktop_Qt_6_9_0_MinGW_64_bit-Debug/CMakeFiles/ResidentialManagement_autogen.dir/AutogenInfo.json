@@ -332,9 +332,9 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/TH_OOP/CuoiKi/ResidentialManagement/family.h",
+			"D:/TH_OOP/CuoiKi/ResidentialManagement/familywindow.h",
 			"MU",
-			"EWIEGA46WW/moc_family.cpp",
+			"EWIEGA46WW/moc_familywindow.cpp",
 			null
 		],
 		[
@@ -344,15 +344,27 @@
 			null
 		],
 		[
+			"D:/TH_OOP/CuoiKi/ResidentialManagement/permanent.h",
+			"MU",
+			"EWIEGA46WW/moc_permanent.cpp",
+			null
+		],
+		[
 			"D:/TH_OOP/CuoiKi/ResidentialManagement/person.h",
 			"MU",
 			"EWIEGA46WW/moc_person.cpp",
 			null
 		],
 		[
-			"D:/TH_OOP/CuoiKi/ResidentialManagement/town.h",
+			"D:/TH_OOP/CuoiKi/ResidentialManagement/personwindow.h",
 			"MU",
-			"EWIEGA46WW/moc_town.cpp",
+			"EWIEGA46WW/moc_personwindow.cpp",
+			null
+		],
+		[
+			"D:/TH_OOP/CuoiKi/ResidentialManagement/temporary.h",
+			"MU",
+			"EWIEGA46WW/moc_temporary.cpp",
 			null
 		]
 	],
@@ -427,11 +439,13 @@
 	"SETTINGS_FILE" : "D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/ResidentialManagement_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/family.cpp", "MU", null ],
+		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/familywindow.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/main.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/mainwindow.cpp", "MU", null ],
+		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/permanent.cpp", "MU", null ],
 		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/person.cpp", "MU", null ],
-		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/town.cpp", "MU", null ]
+		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/personwindow.cpp", "MU", null ],
+		[ "D:/TH_OOP/CuoiKi/ResidentialManagement/temporary.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

@@ -19,55 +19,43 @@ void Person::addPerson(){}
 void Person::deletePerson(){}
 void Person::editPerson(){}
 //Get
-QString Person::getID(){
+QString Person::getID() const{
     return ID;
 }
 
-QString Person::getIDofOwner(){
-    return IDofOwner;
-}
 
-
-QString Person::getName(){
+QString Person::getName() const {
     return Name;
 }
 
-QString Person::getAddress(){
+QString Person::getAddress() const{
     return Address;
 }
 
-QDate Person::getBirthdate(){
+QDate Person::getBirthdate() const{
     return Birthdate;
 }
 
-QString Person::getLiveStatus(){
+QString Person::getLiveStatus() const{
     return LiveStatus;
 }
 
-QString Person::getMaritalStatus(){
+QString Person::getMaritalStatus() const{
     return MaritalStatus;
 }
 
-QString Person::getRelationship(){
-    return Relationship;
-}
-
-QString Person::getReligion(){
+QString Person::getReligion() const{
     return Religion;
 }
-QString Person::getResidenceType(){
+QString Person::getResidenceType() const{
     return ResidenceType;
 }
-bool Person::getIsHeadOfFamily(){
+bool Person::getIsHeadOfFamily() const{
     return isHeadOfFamily;
 }
 //Set
 void Person::setID(const QString& id){
     ID = id;
-}
-
-void Person::setIDofOwner(const QString& ido){
-    IDofOwner = ido;
 }
 
 void Person::setName(const QString& name){
@@ -88,10 +76,6 @@ void Person::setLiveStatus(const QString& livestatus){
 
 void Person::setMaritalStatus(const QString& maritalstatus){
     MaritalStatus = maritalstatus;
-}
-
-void Person::setRelationship(const QString& relationship){
-    Relationship = relationship;
 }
 
 void Person::setReligion(const QString& religion){

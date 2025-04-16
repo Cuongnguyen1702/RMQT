@@ -18,6 +18,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void showContextMenu(const QPoint &pos);
+    void deleteFamilyByID(const QString &familyID);
     void on_AddFamily_clicked();
 
 private:
