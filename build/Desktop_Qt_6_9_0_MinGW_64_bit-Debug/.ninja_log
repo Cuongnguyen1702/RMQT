@@ -93,3 +93,11 @@
 1267	9634	7665209061213363	CMakeFiles/ResidentialManagement.dir/personwindow.cpp.obj	df9f221eb8408c02
 1262	9664	7665209061153354	CMakeFiles/ResidentialManagement.dir/familywindow.cpp.obj	5e10df8e5969d0c3
 9664	10077	7665209145177835	ResidentialManagement.exe	6fd19ed34a940bd8
+132	577	7665603516445579	ResidentialManagement_autogen/timestamp	238c84d2bea13abd
+132	577	7665603516445579	ResidentialManagement_autogen/mocs_compilation.cpp	238c84d2bea13abd
+132	577	7665603516445579	D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ResidentialManagement_autogen/timestamp	238c84d2bea13abd
+132	577	7665603516445579	D:/TH_OOP/CuoiKi/ResidentialManagement/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ResidentialManagement_autogen/mocs_compilation.cpp	238c84d2bea13abd
+579	8980	7665603520900165	CMakeFiles/ResidentialManagement.dir/mainwindow.cpp.obj	789679c0ba6c9f69
+586	12725	7665603520980165	CMakeFiles/ResidentialManagement.dir/familywindow.cpp.obj	5e10df8e5969d0c3
+594	12885	7665603521050164	CMakeFiles/ResidentialManagement.dir/personwindow.cpp.obj	df9f221eb8408c02
+12885	14589	7665603643969465	ResidentialManagement.exe	6fd19ed34a940bd8

@@ -68,6 +68,8 @@ void PersonWindow::loadExistingPersons()
 
             permanentList.push_back(p);
             personList.push_back(p);
+
+            delete p;
         }
         else if (residenceType == "Tạm trú") {
             Temporary* t = new Temporary();
@@ -88,6 +90,8 @@ void PersonWindow::loadExistingPersons()
 
             temporaryList.push_back(t);
             personList.push_back(t);
+
+            delete t;
         }
     }
 

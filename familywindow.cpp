@@ -31,6 +31,7 @@ void FamilyWindow::deleteFromCSV(const QString &id)
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
     QTextStream in(&file);
+    in.setEncoding(QStringConverter::Utf8);
     QStringList lines;
     QString header = in.readLine();  // Save header
     lines.append(header);
