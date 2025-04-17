@@ -103,6 +103,7 @@ void FamilyWindow::FamilyMemList()
     }
 
     QTextStream in(&file);
+    in.setEncoding(QStringConverter::Utf8);
     QString headerLine = in.readLine(); // Skip header
 
     QString targetFamilyID = ui->IDtextEdit->text().trimmed();

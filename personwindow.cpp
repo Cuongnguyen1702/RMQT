@@ -29,6 +29,7 @@ void PersonWindow::loadExistingPersons()
         return;
 
     QTextStream in(&file);
+    in.setEncoding(QStringConverter::Utf8);
     in.readLine(); // Skip header
 
     while (!in.atEnd()) {

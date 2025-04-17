@@ -32,6 +32,7 @@ void MainWindow::deleteFamilyByID(const QString &familyID)
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
     QTextStream in(&file);
+    in.setEncoding(QStringConverter::Utf8);
     QString header = in.readLine();
     lines.append(header); // Keep header
 
@@ -68,6 +69,7 @@ void MainWindow::showContextMenu(const QPoint &pos)
     QFile file(filePath);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
+        in.setEncoding(QStringConverter::Utf8);
         in.readLine(); // Skip header
         while (!in.atEnd()) {
             QString line = in.readLine();
@@ -120,6 +122,7 @@ void MainWindow::FamilyList(){
     }
 
     QTextStream in(&file);
+    in.setEncoding(QStringConverter::Utf8);
     QString headerLine = in.readLine(); // Skip header
 
     int row = 0;
