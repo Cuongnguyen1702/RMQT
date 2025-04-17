@@ -23,6 +23,7 @@ PersonWindow::~PersonWindow()
 
 void PersonWindow::loadExistingPersons()
 {
+    //Read CSV file to check to prevent duplicate someone
     QString filePath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/FamiliesInTown.csv";
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))

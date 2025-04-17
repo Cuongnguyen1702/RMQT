@@ -56,6 +56,7 @@ void FamilyWindow::deleteFromCSV(const QString &id)
     }
 }
 
+//Menu to delete item
 void FamilyWindow::showContextMenu(const QPoint &pos)
 {
     QModelIndex index = ui->FamMemTableWidg->indexAt(pos);
