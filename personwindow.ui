@@ -262,26 +262,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="AlivetextEdit">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>230</y>
-     <width>281</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="MaritaltextEdit">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>260</y>
-     <width>281</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QTextEdit" name="RelationshiptextEdit">
    <property name="geometry">
     <rect>
@@ -396,6 +376,84 @@
      <height>21</height>
     </rect>
    </property>
+  </widget>
+  <widget class="QComboBox" name="GendercomboBox">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>50</y>
+     <width>82</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Nam</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nữ</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="Genderlabel">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>50</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Giới tính</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="LiveStatuscomboBox">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>230</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Còn sống</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Đã chết</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mất tích</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="MartitalcomboBox">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>260</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Độc thân</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Đã kết hôn</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

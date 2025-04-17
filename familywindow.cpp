@@ -82,13 +82,13 @@ void FamilyWindow::showContextMenu(const QPoint &pos)
 void FamilyWindow::FamilyMemList()
 {
     QTableWidget *table = ui->FamMemTableWidg;
-    table->setColumnCount(17);
+    table->setColumnCount(18);
     table->setRowCount(0);
 
     this->setWindowTitle("DANH SÁCH THÀNH VIÊN CÙNG MỘT HỘ GIA ĐÌNH");
 
     QStringList hlabels;
-    hlabels << "Họ và tên" << "Số CCCD" << "Ngày sinh" << "Nơi ở hiện tại"
+    hlabels << "Họ và tên" << "Số CCCD" << "Giới tính" << "Ngày sinh" << "Nơi ở hiện tại"
             << "Địa chỉ thường trú" << "Tình trạng hôn nhân" << "Tôn giáo" << "CCCD chủ hộ" << "Quan hệ với chủ hộ" << "Chủ hộ"
             << "Tình trạng" << "Loại cư trú"
             << "Ngày đăng kí" << "Địa chỉ tạm trú" << "Địa chỉ quê quán" << "Ngày bắt đầu tạm trú" << "Ngày hết hạn tạm trú";
@@ -113,30 +113,32 @@ void FamilyWindow::FamilyMemList()
         QString line = in.readLine();
         QStringList columns = line.split(";");
 
-        if (columns.size() < 17)
+        if (columns.size() < 18)
             continue; // Skip malformed rows
 
-        QString familyID = columns[10];
+        QString familyID = columns[11];
 
         if (familyID == targetFamilyID) {
             table->insertRow(row);
             table->setItem(row, 0, new QTableWidgetItem(columns[1])); // Name
             table->setItem(row, 1, new QTableWidgetItem(columns[0])); // ID
-            table->setItem(row, 2, new QTableWidgetItem(columns[3])); // Birthdate
-            table->setItem(row, 3, new QTableWidgetItem(columns[2])); // Current Address
-            table->setItem(row, 4, new QTableWidgetItem(columns[9])); // Permanent Address
-            table->setItem(row, 5, new QTableWidgetItem(columns[5])); // Marital Status
-            table->setItem(row, 6, new QTableWidgetItem(columns[6])); // Religion
-            table->setItem(row, 7, new QTableWidgetItem(familyID));   // FamilyID
-            table->setItem(row, 8, new QTableWidgetItem(columns[11])); //Relationship
-            table->setItem(row, 9, new QTableWidgetItem(columns[8])); //Is Head of Family
-            table->setItem(row, 10, new QTableWidgetItem(columns[4]));//Residence type
-            table->setItem(row, 11, new QTableWidgetItem(columns[7]));//Start date
-            table->setItem(row, 12, new QTableWidgetItem(columns[12])); //Date Registered
-            table->setItem(row, 13, new QTableWidgetItem(columns[13]));//Temporary Address
-            table->setItem(row, 14, new QTableWidgetItem(columns[14]));//Place of Origin
-            table->setItem(row, 15, new QTableWidgetItem(columns[15]));//Start date
-            table->setItem(row, 16, new QTableWidgetItem(columns[16]));//End date
+            table->setItem(row, 2, new QTableWidgetItem(columns[2])); // Gender
+            table->setItem(row, 3, new QTableWidgetItem(columns[4])); // Birthdate
+            table->setItem(row, 4, new QTableWidgetItem(columns[3])); // Current Address
+            table->setItem(row, 5, new QTableWidgetItem(columns[10])); // Permanent Address
+            table->setItem(row, 6, new QTableWidgetItem(columns[6])); // Marital Status
+            table->setItem(row, 7, new QTableWidgetItem(columns[7])); // Religion
+            table->setItem(row, 8, new QTableWidgetItem(familyID));   // FamilyID
+            table->setItem(row, 9, new QTableWidgetItem(columns[12]));// Relationship
+            table->setItem(row, 10, new QTableWidgetItem(columns[9])); // Is Head of Family
+            table->setItem(row, 11, new QTableWidgetItem(columns[8]));// Residence type
+            table->setItem(row, 12, new QTableWidgetItem(columns[5]));// Live Status
+            table->setItem(row, 13, new QTableWidgetItem(columns[13]));// Date Registered
+            table->setItem(row, 14, new QTableWidgetItem(columns[14])); // Temporary Address
+            table->setItem(row, 15, new QTableWidgetItem(columns[15])); // Place of Origin
+            table->setItem(row, 16, new QTableWidgetItem(columns[16])); // Start date
+            table->setItem(row, 17, new QTableWidgetItem(columns[17])); // End date
+
             row++;
         }
     }

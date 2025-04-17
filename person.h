@@ -7,6 +7,7 @@ class Person
 protected:
     QString ID;
     QString Name;
+    QString Gender;
     QString Address;
     QDate Birthdate;
     QString LiveStatus;
@@ -26,6 +27,7 @@ public:
 
     virtual QString getID() const;
     virtual QString getName() const;
+    virtual QString getGender() const;
     virtual QString getAddress() const;
     virtual QDate getBirthdate() const;
     virtual QString getLiveStatus() const;
@@ -36,6 +38,7 @@ public:
 
     virtual void setID(const QString& id);
     virtual void setName(const QString& name);
+    virtual void setGender(const QString& gender);
     virtual void setAddress(const QString& address);
     virtual void setBirthdate(const QDate& birthdate);
     virtual void setLiveStatus(const QString& livestatus);

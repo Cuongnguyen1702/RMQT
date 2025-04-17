@@ -40,7 +40,7 @@ void PersonWindow::loadExistingPersons()
             continue;
 
         QString id = columns[0];
-        bool isHead = (columns[8] == "1");
+        bool isHead = (columns[9] == "1");
 
         // Avoid duplicates
         auto existed = std::find_if(personList.begin(), personList.end(), [&](const Person* p){
@@ -50,49 +50,47 @@ void PersonWindow::loadExistingPersons()
         if (existed != personList.end())
             continue;
 
-        QString residenceType = columns[7];
+        QString residenceType = columns[8];
         if (residenceType == "Thường trú") {
             Permanent* p = new Permanent();
             p->setID(columns[0]);
             p->setName(columns[1]);
-            p->setAddress(columns[2]);
-            p->setBirthdate(QDate::fromString(columns[3], "MM-dd-yyyy"));
-            p->setLiveStatus(columns[4]);
-            p->setMaritalStatus(columns[5]);
-            p->setReligion(columns[6]);
+            p->setGender(columns[2]);
+            p->setAddress(columns[3]);
+            p->setBirthdate(QDate::fromString(columns[4], "MM-dd-yyyy"));
+            p->setLiveStatus(columns[5]);
+            p->setMaritalStatus(columns[6]);
+            p->setReligion(columns[7]);
             p->setResidenceType(residenceType);
             p->setIsHeadOfFamily(isHead);
-            p->setPermaAddr(columns[9]);
-            p->setFamilyID(columns[10]);
-            p->setRelationshipToHead(columns[11]);
-            p->setDateRegistered(QDate::fromString(columns[12], "MM-dd-yyyy"));
+            p->setPermaAddr(columns[10]);
+            p->setFamilyID(columns[11]);
+            p->setRelationshipToHead(columns[12]);
+            p->setDateRegistered(QDate::fromString(columns[13], "MM-dd-yyyy"));
 
             permanentList.push_back(p);
             personList.push_back(p);
-
-            delete p;
         }
         else if (residenceType == "Tạm trú") {
             Temporary* t = new Temporary();
             t->setID(columns[0]);
             t->setName(columns[1]);
-            t->setAddress(columns[2]);
-            t->setBirthdate(QDate::fromString(columns[3], "MM-dd-yyyy"));
-            t->setLiveStatus(columns[4]);
-            t->setMaritalStatus(columns[5]);
-            t->setReligion(columns[6]);
+            t->setGender(columns[2]);
+            t->setAddress(columns[3]);
+            t->setBirthdate(QDate::fromString(columns[4], "MM-dd-yyyy"));
+            t->setLiveStatus(columns[5]);
+            t->setMaritalStatus(columns[6]);
+            t->setReligion(columns[7]);
             t->setResidenceType(residenceType);
             t->setIsHeadOfFamily(isHead);
-            t->setTempAddr(columns[13]);
-            t->setOrigAddr(columns[14]);
-            t->setStartDate(QDate::fromString(columns[15], "MM-dd-yyyy"));
-            t->setEndDate(QDate::fromString(columns[16], "MM-dd-yyyy"));
-            t->setFamilyID(columns[10]);
+            t->setTempAddr(columns[14]);
+            t->setOrigAddr(columns[15]);
+            t->setStartDate(QDate::fromString(columns[16], "MM-dd-yyyy"));
+            t->setEndDate(QDate::fromString(columns[17], "MM-dd-yyyy"));
+            t->setFamilyID(columns[11]);
 
             temporaryList.push_back(t);
             personList.push_back(t);
-
-            delete t;
         }
     }
 
@@ -114,10 +112,11 @@ void PersonWindow::MemInfo(){
             Permanent *permas = new Permanent();
             permas->setID(id);
             permas->setName(ui->NametextEdit->toPlainText());
+            permas->setGender(ui->GendercomboBox->currentIndex() == 0? "Nam" : "Nữ");
             permas->setAddress(ui->AddresstextEdit->toPlainText());
             permas->setBirthdate(ui->BirthdateEdit->date());
-            permas->setLiveStatus(ui->AlivetextEdit->toPlainText());
-            permas->setMaritalStatus(ui->MaritaltextEdit->toPlainText());
+            permas->setLiveStatus(ui->LiveStatuscomboBox->currentIndex() == 0 ? "Còn sống" : (ui->LiveStatuscomboBox->currentIndex() == 1 ? "Đã chết" : "Mất tích"));
+            permas->setMaritalStatus(ui->MartitalcomboBox->currentIndex() == 0?"Độc thân" : "Đã kết hôn");
             permas->setReligion(ui->ReligiontextEdit->toPlainText());
             permas->setResidenceType("Thường trú");
             permas->setIsHeadOfFamily(ui->OwnerCheckBox->isChecked());
@@ -139,10 +138,11 @@ void PersonWindow::MemInfo(){
             Temporary *temps = new Temporary();
             temps->setID(id);
             temps->setName(ui->NametextEdit->toPlainText());
+            temps->setGender(ui->GendercomboBox->currentIndex() == 0? "Nam" : "Nữ");
             temps->setAddress(ui->AddresstextEdit->toPlainText());
             temps->setBirthdate(ui->BirthdateEdit->date());
-            temps->setLiveStatus(ui->AlivetextEdit->toPlainText());
-            temps->setMaritalStatus(ui->MaritaltextEdit->toPlainText());
+            temps->setLiveStatus(ui->LiveStatuscomboBox->currentIndex() == 0 ? "Còn sống" : (ui->LiveStatuscomboBox->currentIndex() == 1 ? "Đã chết" : "Mất tích"));
+            temps->setMaritalStatus(ui->MartitalcomboBox->currentIndex() == 0?"Độc thân" : "Đã kết hôn");
             temps->setReligion(ui->ReligiontextEdit->toPlainText());
             temps->setResidenceType("Tạm trú");
             temps->setIsHeadOfFamily(ui->OwnerCheckBox->isChecked());
@@ -177,7 +177,7 @@ void PersonWindow::on_SaveButton_clicked()
         stream.setEncoding(QStringConverter::Utf8);
 
         if (writeHeader) {
-            stream << "ID;Name;Address;Birthdate;LiveStatus;MaritalStatus;Religion;ResidenceType;IsHeadOfFamily;";
+            stream << "ID;Name;Gender;Address;Birthdate;LiveStatus;MaritalStatus;Religion;ResidenceType;IsHeadOfFamily;";
             stream << "PermaAddr;FamilyID;RelationshipToHead;DateRegistered;";
             stream << "TempAddr;OrigAddr;StartDate;EndDate\n";
         }
@@ -185,6 +185,7 @@ void PersonWindow::on_SaveButton_clicked()
         for (Person* person : personList) {
             stream << person->getID() << ";"
                    << person->getName() << ";"
+                   << person->getGender() << ";"
                    << person->getAddress() << ";"
                    << person->getBirthdate().toString("MM-dd-yyyy") << ";"
                    << person->getLiveStatus() << ";"

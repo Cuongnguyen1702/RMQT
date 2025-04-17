@@ -39,7 +39,7 @@ void MainWindow::deleteFamilyByID(const QString &familyID)
     while (!in.atEnd()) {
         QString line = in.readLine();
         QStringList cols = line.split(";");
-        if (cols.size() >= 11 && cols[10] != familyID) {
+        if (cols.size() >= 12 && cols[11] != familyID) {
             lines.append(line); // Keep only those with different FamilyID
         }
     }
@@ -74,8 +74,8 @@ void MainWindow::showContextMenu(const QPoint &pos)
         while (!in.atEnd()) {
             QString line = in.readLine();
             QStringList columns = line.split(";");
-            if (columns.size() >= 11 && columns[0] == id && columns[8].trimmed() == "1") {
-                familyID = columns[10];
+            if (columns.size() >= 12 && columns[0] == id && columns[9].trimmed() == "1") {
+                familyID = columns[11];
                 break;
             }
         }
@@ -114,6 +114,7 @@ void MainWindow::FamilyList(){
     table->setHorizontalHeaderLabels(hlabels);
 
     //Read CSV
+
     QString filePath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/FamiliesInTown.csv";
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -130,14 +131,14 @@ void MainWindow::FamilyList(){
         QString line = in.readLine();
         QStringList columns = line.split(";");
 
-        if (columns.size() < 17)
+        if (columns.size() < 18)
             continue; // Skip malformed rows
 
-        if(columns[8].trimmed() == "1"){
+        if(columns[9].trimmed() == "1"){
             table->insertRow(row);
-            table->setItem(row, 0, new QTableWidgetItem(columns[8])); // ID of head
+            table->setItem(row, 0, new QTableWidgetItem(columns[9])); // ID of head
             table->setItem(row, 1, new QTableWidgetItem(columns[1])); // Name
-            table->setItem(row, 2, new QTableWidgetItem(columns[2])); // Address
+            table->setItem(row, 2, new QTableWidgetItem(columns[3])); // Address
 
             row++;
         }
@@ -145,6 +146,7 @@ void MainWindow::FamilyList(){
     }
 
     file.close();
+
 
     // Styling
     table->setStyleSheet(

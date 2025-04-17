@@ -44,8 +44,6 @@ public:
     QTextEdit *PermaAddrtextEdit;
     QTextEdit *TempAddrtextEdit;
     QTextEdit *ReligiontextEdit;
-    QTextEdit *AlivetextEdit;
-    QTextEdit *MaritaltextEdit;
     QTextEdit *RelationshiptextEdit;
     QDateEdit *BirthdateEdit;
     QPushButton *SaveButton;
@@ -56,6 +54,10 @@ public:
     QDateEdit *EndDateEdit;
     QLabel *FamIDlabel;
     QTextEdit *FamIDtextEdit;
+    QComboBox *GendercomboBox;
+    QLabel *Genderlabel;
+    QComboBox *LiveStatuscomboBox;
+    QComboBox *MartitalcomboBox;
 
     void setupUi(QDialog *PersonWindow)
     {
@@ -124,12 +126,6 @@ public:
         ReligiontextEdit = new QTextEdit(PersonWindow);
         ReligiontextEdit->setObjectName("ReligiontextEdit");
         ReligiontextEdit->setGeometry(QRect(150, 200, 281, 21));
-        AlivetextEdit = new QTextEdit(PersonWindow);
-        AlivetextEdit->setObjectName("AlivetextEdit");
-        AlivetextEdit->setGeometry(QRect(150, 230, 281, 21));
-        MaritaltextEdit = new QTextEdit(PersonWindow);
-        MaritaltextEdit->setObjectName("MaritaltextEdit");
-        MaritaltextEdit->setGeometry(QRect(150, 260, 281, 21));
         RelationshiptextEdit = new QTextEdit(PersonWindow);
         RelationshiptextEdit->setObjectName("RelationshiptextEdit");
         RelationshiptextEdit->setGeometry(QRect(160, 290, 281, 21));
@@ -160,6 +156,25 @@ public:
         FamIDtextEdit = new QTextEdit(PersonWindow);
         FamIDtextEdit->setObjectName("FamIDtextEdit");
         FamIDtextEdit->setGeometry(QRect(450, 320, 221, 21));
+        GendercomboBox = new QComboBox(PersonWindow);
+        GendercomboBox->addItem(QString());
+        GendercomboBox->addItem(QString());
+        GendercomboBox->setObjectName("GendercomboBox");
+        GendercomboBox->setGeometry(QRect(520, 50, 82, 21));
+        Genderlabel = new QLabel(PersonWindow);
+        Genderlabel->setObjectName("Genderlabel");
+        Genderlabel->setGeometry(QRect(440, 50, 63, 20));
+        LiveStatuscomboBox = new QComboBox(PersonWindow);
+        LiveStatuscomboBox->addItem(QString());
+        LiveStatuscomboBox->addItem(QString());
+        LiveStatuscomboBox->addItem(QString());
+        LiveStatuscomboBox->setObjectName("LiveStatuscomboBox");
+        LiveStatuscomboBox->setGeometry(QRect(150, 230, 161, 21));
+        MartitalcomboBox = new QComboBox(PersonWindow);
+        MartitalcomboBox->addItem(QString());
+        MartitalcomboBox->addItem(QString());
+        MartitalcomboBox->setObjectName("MartitalcomboBox");
+        MartitalcomboBox->setGeometry(QRect(150, 260, 161, 21));
 
         retranslateUi(PersonWindow);
 
@@ -190,6 +205,17 @@ public:
         StartDatelabel->setText(QCoreApplication::translate("PersonWindow", "Ng\303\240y \304\221\304\203ng k\303\255 c\306\260 tr\303\272", nullptr));
         EndDatelabel->setText(QCoreApplication::translate("PersonWindow", "Ng\303\240y h\341\272\277t h\341\272\241n c\306\260 tr\303\272", nullptr));
         FamIDlabel->setText(QCoreApplication::translate("PersonWindow", "CCCD ch\341\273\247 h\341\273\231", nullptr));
+        GendercomboBox->setItemText(0, QCoreApplication::translate("PersonWindow", "Nam", nullptr));
+        GendercomboBox->setItemText(1, QCoreApplication::translate("PersonWindow", "N\341\273\257", nullptr));
+
+        Genderlabel->setText(QCoreApplication::translate("PersonWindow", "Gi\341\273\233i t\303\255nh", nullptr));
+        LiveStatuscomboBox->setItemText(0, QCoreApplication::translate("PersonWindow", "C\303\262n s\341\273\221ng", nullptr));
+        LiveStatuscomboBox->setItemText(1, QCoreApplication::translate("PersonWindow", "\304\220\303\243 ch\341\272\277t", nullptr));
+        LiveStatuscomboBox->setItemText(2, QCoreApplication::translate("PersonWindow", "M\341\272\245t t\303\255ch", nullptr));
+
+        MartitalcomboBox->setItemText(0, QCoreApplication::translate("PersonWindow", "\304\220\341\273\231c th\303\242n", nullptr));
+        MartitalcomboBox->setItemText(1, QCoreApplication::translate("PersonWindow", "\304\220\303\243 k\341\272\277t h\303\264n", nullptr));
+
     } // retranslateUi
 
 };

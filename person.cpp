@@ -23,9 +23,12 @@ QString Person::getID() const{
     return ID;
 }
 
-
 QString Person::getName() const {
     return Name;
+}
+
+QString Person::getGender() const {
+    return Gender;
 }
 
 QString Person::getAddress() const{
@@ -60,6 +63,10 @@ void Person::setID(const QString& id){
 
 void Person::setName(const QString& name){
     Name = name;
+}
+
+void Person::setGender(const QString& gender){
+    Gender = gender;
 }
 
 void Person::setAddress(const QString& address){
