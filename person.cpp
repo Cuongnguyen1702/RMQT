@@ -1,18 +1,6 @@
 #include "person.h"
 #include <QDate>
-//Constructor
-/*Person::Person(QString id, QString name, QString address, QDate* birthdate, QString livestatus, QString maritalstatus,
-                QString relationship, QString religion, QString restype) {
-    ID = "";
-    Name = "";
-    Address = "";
-    Birthdate = birthdate->currentDate();
-    LiveStatus = "";
-    MaritalStatus = "";
-    Relationship = "";
-    Religion = "";
-    ResidenceType = "";
-}*/
+
 Person::Person(){}
 Person::~Person(){}
 void Person::addPerson(){}
@@ -33,6 +21,10 @@ QString Person::getGender() const {
 
 QString Person::getAddress() const{
     return Address;
+}
+
+QString Person::getPermaAddr() const{
+    return permaAddr;
 }
 
 QDate Person::getBirthdate() const{
@@ -71,6 +63,10 @@ void Person::setGender(const QString& gender){
 
 void Person::setAddress(const QString& address){
     Address = address;
+}
+
+void Person::setPermaAddr(const QString& paddr){
+    permaAddr = paddr;
 }
 
 void Person::setBirthdate(const QDate& birthdate){

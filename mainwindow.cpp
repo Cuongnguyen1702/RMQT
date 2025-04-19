@@ -117,6 +117,7 @@ void MainWindow::FamilyList(){
 
     QString filePath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/FamiliesInTown.csv";
     QFile file(filePath);
+
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Unable to open CSV file!";
         return;
@@ -146,7 +147,6 @@ void MainWindow::FamilyList(){
     }
 
     file.close();
-
 
     // Styling
     table->setStyleSheet(

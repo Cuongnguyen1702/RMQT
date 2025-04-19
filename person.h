@@ -9,6 +9,7 @@ protected:
     QString Name;
     QString Gender;
     QString Address;
+    QString permaAddr;
     QDate Birthdate;
     QString LiveStatus;
     QString MaritalStatus;
@@ -17,8 +18,7 @@ protected:
     bool isHeadOfFamily;
 
 public:
-    /*Person(QString id, QString name, QString address, QDate* birthdate, QString livestatus, QString maritalstatus,
-           QString relationship, QString religion, QString restype);*/
+
     Person();
     virtual ~Person();
     virtual void addPerson();
@@ -29,6 +29,7 @@ public:
     virtual QString getName() const;
     virtual QString getGender() const;
     virtual QString getAddress() const;
+    virtual QString getPermaAddr() const;
     virtual QDate getBirthdate() const;
     virtual QString getLiveStatus() const;
     virtual QString getMaritalStatus() const;
@@ -40,6 +41,7 @@ public:
     virtual void setName(const QString& name);
     virtual void setGender(const QString& gender);
     virtual void setAddress(const QString& address);
+    virtual void setPermaAddr(const QString& paddr);
     virtual void setBirthdate(const QDate& birthdate);
     virtual void setLiveStatus(const QString& livestatus);
     virtual void setMaritalStatus(const QString& maritalstatus);

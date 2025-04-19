@@ -84,6 +84,7 @@ void PersonWindow::loadExistingPersons()
             t->setReligion(columns[7]);
             t->setResidenceType(residenceType);
             t->setIsHeadOfFamily(isHead);
+            t->setPermaAddr(columns[10]);
             t->setTempAddr(columns[14]);
             t->setOrigAddr(columns[15]);
             t->setStartDate(QDate::fromString(columns[16], "MM-dd-yyyy"));
@@ -148,6 +149,7 @@ void PersonWindow::MemInfo(){
             temps->setResidenceType("Tạm trú");
             temps->setIsHeadOfFamily(ui->OwnerCheckBox->isChecked());
             temps->setTempAddr(ui->AddresstextEdit->toPlainText());
+            temps->setPermaAddr(ui->PermaAddrtextEdit->toPlainText());
             temps->setFamilyID(temps->getIsHeadOfFamily() ? id : ui->FamIDtextEdit->toPlainText());
             temps->setOrigAddr(ui->PermaAddrtextEdit->toPlainText());
             temps->setStartDate(ui->StartDateEdit->date());
@@ -193,16 +195,15 @@ void PersonWindow::on_SaveButton_clicked()
                    << person->getMaritalStatus() << ";"
                    << person->getReligion() << ";"
                    << person->getResidenceType() << ";"
-                   << (person->getIsHeadOfFamily() ? 1 : 0) << ";";
+                   << (person->getIsHeadOfFamily() ? 1 : 0) << ";"
+                   << person->getPermaAddr() << ";";
 
             if (Permanent* p = dynamic_cast<Permanent*>(person)) {
-                stream << p->getPermaAddr() << ";"
-                       << p->getFamilyID() << ";"
+                stream << p->getFamilyID() << ";"
                        << p->getRelationshipToHead() << ";"
                        << p->getDateRegistered().toString("MM-dd-yyyy") << ";"
                        << ";;;\n";
             } else if (Temporary* t = dynamic_cast<Temporary*>(person)) {
-                stream << ";";
                 stream << t->getFamilyID() << ";";
                 stream << ";;"; // Empty permanent fields
                 stream << t->getTempAddr() << ";"
