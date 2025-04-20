@@ -21,7 +21,6 @@ public:
     QDate getStartDate();
     QDate getEndDate();
 
-    void setResidenceType();
     void setFamilyID(const QString& fid);
     void setTempAddr(const QString& taddr);
     void setOrigAddr(const QString& oaddr);

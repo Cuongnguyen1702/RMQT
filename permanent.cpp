@@ -15,9 +15,6 @@ QDate Permanent::getDateRegistered(){
     return dateRegistered;
 }
 
-void Permanent::setResidenceType(){
-    ResidenceType = "Thường trú";
-}
 
 void Permanent::setFamilyID(const QString& fid){
     familyID = fid;

@@ -46,7 +46,7 @@ public:
     virtual void setLiveStatus(const QString& livestatus);
     virtual void setMaritalStatus(const QString& maritalstatus);
     virtual void setReligion(const QString& religion);
-    virtual void setResidenceType() = 0;
+    virtual void setResidenceType(const QString& restype);
     virtual void setIsHeadOfFamily(const bool& head);
 };
 

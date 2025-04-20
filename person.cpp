@@ -84,8 +84,8 @@ void Person::setMaritalStatus(const QString& maritalstatus){
 void Person::setReligion(const QString& religion){
     Religion = religion;
 }
-void Person::setResidenceType(){
-    ResidenceType = "";
+void Person::setResidenceType(const QString& restype){
+    ResidenceType = restype;
 }
 void Person::setIsHeadOfFamily(const bool& head){
     isHeadOfFamily = head;
