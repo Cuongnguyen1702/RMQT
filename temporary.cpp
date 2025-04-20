@@ -23,6 +23,9 @@ QDate Temporary::getEndDate(){
     return endDate;
 }
 
+void Temporary::setResidenceType(){
+    ResidenceType = "Tạm trú";
+}
 void Temporary::setTempAddr(const QString& taddr){
     tempAddr = taddr;
 }
