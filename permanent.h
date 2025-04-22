@@ -17,6 +17,7 @@ public:
     QString getRelationshipToHead();
     QDate getDateRegistered();
 
+    void setResidenceType();
     void setFamilyID(const QString& fid);
     void setRelationshipToHead(const QString& rth);
     void setDateRegistered(const QDate& dreg);

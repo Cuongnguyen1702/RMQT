@@ -62,7 +62,7 @@ void PersonWindow::loadExistingPersons()
             p->setLiveStatus(columns[5]);
             p->setMaritalStatus(columns[6]);
             p->setReligion(columns[7]);
-            p->setResidenceType("Thường trú");
+            p->setResidenceType();
             p->setIsHeadOfFamily(isHead);
             p->setPermaAddr(columns[10]);
             p->setFamilyID(columns[11]);
@@ -82,7 +82,7 @@ void PersonWindow::loadExistingPersons()
             t->setLiveStatus(columns[5]);
             t->setMaritalStatus(columns[6]);
             t->setReligion(columns[7]);
-            t->setResidenceType("Tạm trú");
+            t->setResidenceType();
             t->setIsHeadOfFamily(isHead);
             t->setPermaAddr(columns[10]);
             t->setTempAddr(columns[14]);
@@ -120,7 +120,7 @@ void PersonWindow::MemInfo(){
             permas->setLiveStatus(ui->LiveStatuscomboBox->currentIndex() == 0 ? "Còn sống" : (ui->LiveStatuscomboBox->currentIndex() == 1 ? "Đã chết" : "Mất tích"));
             permas->setMaritalStatus(ui->MartitalcomboBox->currentIndex() == 0?"Độc thân" : "Đã kết hôn");
             permas->setReligion(ui->ReligiontextEdit->toPlainText());
-            permas->setResidenceType("Thường trú");
+            permas->setResidenceType();
             permas->setIsHeadOfFamily(ui->OwnerCheckBox->isChecked());
             permas->setPermaAddr(ui->AddresstextEdit->toPlainText());
             permas->setFamilyID(permas->getIsHeadOfFamily() ? id : ui->FamIDtextEdit->toPlainText());
@@ -146,7 +146,7 @@ void PersonWindow::MemInfo(){
             temps->setLiveStatus(ui->LiveStatuscomboBox->currentIndex() == 0 ? "Còn sống" : (ui->LiveStatuscomboBox->currentIndex() == 1 ? "Đã chết" : "Mất tích"));
             temps->setMaritalStatus(ui->MartitalcomboBox->currentIndex() == 0?"Độc thân" : "Đã kết hôn");
             temps->setReligion(ui->ReligiontextEdit->toPlainText());
-            temps->setResidenceType("Tạm trú");
+            temps->setResidenceType();
             temps->setIsHeadOfFamily(ui->OwnerCheckBox->isChecked());
             temps->setTempAddr(ui->AddresstextEdit->toPlainText());
             temps->setPermaAddr(ui->PermaAddrtextEdit->toPlainText());
